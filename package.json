@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "JavaScript develoment enviroment",
   "scripts": {
+    "start": "node build-scripts/src-server.js",
+    "pretart": "node build-scripts/start-message.js",
+    "share": "lt --port 3000"
   },
   "author": "Lucas Bonanni",
   "license": "MIT",
