@@ -4,8 +4,8 @@
   "description": "JavaScript develoment enviroment",
   "scripts": {
     "start":"npm-run-all --parallel open:src msg",
-    "open:src": "node build-scripts/src-server.js",
-    "msg": "node build-scripts/start-message.js",
+    "open:src": "babel-node build-scripts/src-server.js",
+    "msg": "babel-node build-scripts/start-message.js",
     "localtunnel": "lt --port 3000",
     "share": "npm-run-all --parallel open:src localtunnel"
   },
