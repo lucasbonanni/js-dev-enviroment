@@ -16,11 +16,10 @@ export default {
   },
   plugins: [
     // Create HTML file that includes reference to bundled JS.
-    // It should work without the htmlwebpackplugin but doesn't work
-    new HtmlWebpackPlugin({
-      template: 'src/index.html',
-      inject: true
-    })
+    // new HtmlWebpackPlugin({
+    //   template: 'src/index.html',
+    //   inject: true
+    // })
 ],
   module:{
     loaders: [
