@@ -6,3 +6,13 @@ npm i localtunnel -g
 
 ### install eslint
 npm i -g eslint
+
+### Unit test framework
+mocha
+
+### Assertion library
+chai
+
+### helper libraries
+jsdom
+
