@@ -15,6 +15,3 @@ chai
 
 ### helper libraries
 jsdom
-
-### error
-Is not running the test with ES6 syntax
