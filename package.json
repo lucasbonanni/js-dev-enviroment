@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "JavaScript develoment enviroment",
   "scripts": {
-    "start":"npm-run-all --parallel open:src msg lint:watch test:watch start-mockapi",
+    "start": "npm-run-all --parallel open:src msg lint:watch test:watch start-mockapi",
     "open:src": "babel-node build-scripts/src-server.js",
     "msg": "babel-node build-scripts/start-message.js",
     "localtunnel": "lt --port 3000",
