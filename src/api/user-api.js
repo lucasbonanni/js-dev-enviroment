@@ -5,7 +5,7 @@ import getBaseUrl from './baseUrl';
 const baseUrl = getBaseUrl();
 
 export function deleteUser(id){
-  return del(`user${id}`);
+  return del(`users/${id}`);
 }
 
 export function getUsers(){
@@ -26,7 +26,7 @@ function del(url){
 function onSuccess(response){
   return response.json();
 }
-
+/* eslint-disable no-console */
 function onError(error){
   console.log(error);
 }

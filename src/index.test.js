@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { env } from 'jsdom';
 import { readFileSync } from 'fs';
-
+/* eslint-env node, mocha */
 describe('our first test', () =>{
   it('should pass', () => {
     expect(true).to.equal(true);

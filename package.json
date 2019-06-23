@@ -13,7 +13,11 @@
     "test": "mocha --reporter progress build-scripts/test-setup.js \"src/**/*.test.js\"",
     "test:watch": "npm run test -- --watch",
     "prestart-mockapi": "babel-node build-scripts/generateMockData",
-    "start-mockapi": "json-server --watch src/api/db.json --port 3001"
+    "start-mockapi": "json-server --watch src/api/db.json --port 3001",
+    "clean-dist": "rimraf ./dist && mkdir dist",
+    "prebuild": "npm-run-all clean-dist test lint",
+    "build": "babel-node build-scripts/build.js",
+    "postbuild": "babel-node build-scripts/dist-server.js"
   },
   "author": "Lucas Bonanni",
   "license": "MIT",
