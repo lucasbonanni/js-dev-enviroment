@@ -1,7 +1,8 @@
-import path from 'path';
 import webpack from 'webpack';
+import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackMd5Hash from 'webpack-md5-hash';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 export default {
   debug: true,
@@ -25,6 +26,8 @@ export default {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor'
     }),
+    // Generate an external css file with a hash in the filename
+    new ExtractTextPlugin('[name].[contenthash].css'),
     // Create HTML file that includes reference to bundled JS.
     new HtmlWebpackPlugin({
       template: 'src/index.html',
@@ -42,15 +45,16 @@ export default {
       },
       inject: true
     }),
-    //Eliminate duplicate pakages when is generating the bundle
+    // Eliminate duplicate packages when generating bundle
     new webpack.optimize.DedupePlugin(),
-    //minify JS
+
+    // Minify JS
     new webpack.optimize.UglifyJsPlugin()
   ],
   module: {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loaders: ['babel'] },
-      { test: /\.css$/, loaders: ['style', 'css'] }
+      { test: /\.css$/, loader: ExtractTextPlugin.extract('css?sourceMap') }
     ]
   }
 };
